@@ -446,7 +446,7 @@ function renderHome(meta) {
   teardownSticky();
   state.homeData = meta;
   const { stats, featured } = meta;
-  document.title = `jyut6din2 · words.hk ${c('apk映射版')}`;
+  document.title = `jyut6din2 · ${c('apk')}`;
 
   app.innerHTML = `
     <section class="hero">
