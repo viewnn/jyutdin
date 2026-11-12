@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hans" class="script-booting">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="jyut6din2：離線粵語詞典，收錄 words.hk 粵典詞條、粵拼、中英釋義。" />
+    <meta name="theme-color" content="#b5462f" />
+    <title>jyut6din2 · words.hk apk映射版</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* 轉換完成前先隱藏靜態文案，避免繁體一閃 */
+      html.script-booting .topbar,
+      html.script-booting .footer {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#/">
+          <span class="brand-mark">粵</span>
+          <span class="brand-text">
+            <strong>jyut6din2</strong>
+            <small>words.hk apk映射版</small>
+          </span>
+        </a>
+
+        <form class="searchbar" id="search-form" role="search">
+          <svg class="searchbar-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input
+            id="q"
+            type="search"
+            name="q"
+            placeholder="搜尋詞語、英文或粵拼，例如「唔該」「lucky」"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-label="搜尋詞語"
+          />
+          <button type="submit" id="search-btn">搜尋</button>
+        </form>
+
+        <div class="script-toggle" id="script-toggle" role="group" aria-label="字形切換">
+          <button type="button" data-script="trad" aria-pressed="false">繁體</button>
+          <button type="button" data-script="simp" aria-pressed="true" class="active">簡體</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="app" class="app"></main>
+
+    <footer class="footer">
+      <p>
+        資料來源：<a href="https://words.hk" target="_blank" rel="noopener">words.hk 粵典</a>，
+        由本地 <code>dict.json</code> 及 <code>wordshk.csv</code> 預先產生。
+      </p>
+      <p class="footer-hint">按 <kbd>/</kbd> 快速聚焦搜尋框 · <kbd>Esc</kbd> 清除</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

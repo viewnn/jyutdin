@@ -1,0 +1,16 @@
+{
+  "name": "jyut6din2-apk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "jyut6din2 — 粵語詞典靜態版（GitHub Pages 用，無需後端）",
+  "scripts": {
+    "build": "node src/build-static.mjs",
+    "start": "node src/dev-server.mjs",
+    "dev": "node src/dev-server.mjs",
+    "preview": "node src/dev-server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
