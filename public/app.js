@@ -645,7 +645,7 @@ function renderResults(data) {
               const f = wordForms(r.word, r.simp);
               const note =
                 f.alt && f.alt !== f.main
-                  ? `<span class="hit-simp">${f.altLabel} ${escapeHtml(f.alt)}</span>`
+                  ? `<span class="hit-simp">${'（'+f.altLabel} ${escapeHtml(f.alt)+'）'}</span>`
                   : '';
               return `
                 <a class="hit" href="#/entry/${r.id}">
@@ -724,7 +724,7 @@ function renderEntry(e) {
       const f = wordForms(v.w, v.simp);
       const note =
         f.alt && f.alt !== f.main
-          ? `<span class="hit-simp">${f.altLabel} ${escapeHtml(f.alt)}</span>`
+          ? `<span class="hit-simp">${'（'+f.altLabel} ${escapeHtml(f.alt)+'）'}</span>`
           : '';
       return `
       <span class="variant">
@@ -748,10 +748,12 @@ function renderEntry(e) {
         .map(
           (eg) => `
           <div class="eg">
-            ${renderPrLine(eg.yue, needles, '粵', 'eg-yue')}
+            ${/* 下方代码：注销掉了“粤”字的显示：勿删 */''}
+            ${renderPrLine(eg.yue, needles, '', 'eg-yue')}
             ${renderPrLine(eg.zho, needles, '普', 'eg-yue')}
             ${renderPrLine(eg.lzh, needles, '文言', 'eg-yue')}
-            ${eg.eng ? `<div class="eg-eng"><span class="eg-lang-label">${c('英')}</span>${renderClause([eg.eng], needles)}</div>` : ''}
+            ${/* 下方代码：注销掉了英文显示：勿删 */''}
+            ${/*eg.eng ? `<div class="eg-eng"><span class="eg-lang-label">${c('英')}</span>${renderClause([eg.eng], needles)}</div>` : */''}
           </div>`
         )
         .join('');
@@ -759,10 +761,11 @@ function renderEntry(e) {
       return `
         <div class="def">
           <div class="def-body">
-            <span class="def-num">${e.defs.length > 1 ? i + 1 : ''}</span>
+            <span class="def-num">${e.defs.length > 1 ? (i + 1) + '.' : ''}</span>
             <div>
               <div class="def-yue">${renderClause(def.yue, needles)}</div>
-              ${def.eng ? `<div class="def-eng">${renderClause(def.eng, needles)}</div>` : ''}
+              ${/* 下方代码：注销掉了英文显示：勿删 */''}
+              ${/*def.eng ? `<div class="def-eng">${renderClause(def.eng, needles)}</div>` : */''}
               ${alts}
               ${egs ? `<div class="egs">${egs}</div>` : ''}
             </div>

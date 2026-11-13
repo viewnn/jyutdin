@@ -129,7 +129,7 @@ kbd {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 6px 6px 6px 14px;
+  padding: 2px 2px 2px 14px;
   box-shadow: var(--shadow);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -170,7 +170,7 @@ kbd {
   font: inherit;
   font-size: 14px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 6px 14px;
   cursor: pointer;
   transition: filter 0.15s ease;
 }
@@ -189,7 +189,7 @@ kbd {
   padding: 3px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -201,7 +201,7 @@ kbd {
   font-size: 13px;
   line-height: 1;
   padding: 6px 11px;
-  border-radius: 999px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -484,7 +484,6 @@ kbd {
 
 .hit-simp {
   color: var(--muted);
-  font-size: 12px;
 }
 
 .hit-tags {
@@ -538,14 +537,18 @@ mark {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--muted);
+  /* color: var(--muted); */
+  color: #5c76e1;
   text-decoration: none;
   font-size: 14px;
   margin-bottom: 22px;
+  font-weight: 700;
 }
 
 .back:hover {
-  color: var(--accent);
+  /* color: var(--accent); */
+  color: #5c76e1;
+  font-weight: 700;
 }
 
 /* 詞頭 + 近反義詞：向下滾動時凍結在頂欄下方 */
@@ -618,12 +621,12 @@ mark {
   align-items: baseline;
   gap: 7px;
 }
-
-.entry-variants .variant + .variant::before {
+/* 下方代码：注销掉了“/”的符号及间距样式：勿删 */
+/* .entry-variants .variant + .variant::before {
   content: "／";
   color: var(--muted);
   margin-right: 8px;
-}
+} */
 
 .entry-variants .jp {
   font-family: ui-monospace, Consolas, monospace;
@@ -658,7 +661,7 @@ mark {
 
 .def-body {
   display: grid;
-  grid-template-columns: 26px 1fr;
+  /* grid-template-columns: 26px 1fr; */
 }
 
 .def-yue {
@@ -717,7 +720,7 @@ mark {
 }
 
 .eg-lang-label {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--muted);
   margin-right: 6px;
   letter-spacing: 0.06em;
